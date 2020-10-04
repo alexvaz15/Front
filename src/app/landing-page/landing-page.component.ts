@@ -1,16 +1,45 @@
 import { Component, OnInit } from '@angular/core';
-
+import{ServiceService} from '../service.service'
+//Decoradores
 @Component({
   selector: 'app-landing-page',
   templateUrl: './landing-page.component.html',
   styleUrls: ['./landing-page.component.css']
 })
-export class LandingPageComponent implements OnInit {
+//Clase principal del Componente de la logica de negocio
 
-  constructor() { }
+export class LandingPageComponent implements OnInit {
+   products = [];
+  status : Boolean=false;
+  
+  nameButton : String = 'Mostrar';
+  info  : String = 'No hay datos';
+  
+  constructor(private serviceService : ServiceService) { }
 
   ngOnInit(): void {
+    this.serviceService.getProduct("products/").subscribe((data : any[]) => {
+      console.log(data);
+      this.products = data;});
+    
   }
-ng 
+  sendService(){
+    //this.info='Si hay datos';
+ 
+  }
+
+  cleanService(){
+    this.products=[];
+  }
+  showService(){
+    this.status = !this.status //Toggle
+    console.log(this.status);
+    if(this.status){
+      this.nameButton='Ocultar'
+    }else{
+      this.nameButton='Mostrar'
+    }
+  }
+
 }
 

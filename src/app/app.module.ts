@@ -8,14 +8,20 @@ import { RegisterComponent } from './register/register.component';
 import { DashaboardComponent } from './dashaboard/dashaboard.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 
+
 import{HttpClientModule} from '@angular/common/http';
+import { HeaderComponent } from './header/header.component';
+import { FormularioComponent } from './formulario/formulario.component';
+import { from } from 'rxjs';
 @NgModule({
   declarations: [
     AppComponent,
-    LandingPageComponent,
     LoginComponent,
     RegisterComponent,
-    DashaboardComponent
+    DashaboardComponent,
+    LandingPageComponent,
+    HeaderComponent,
+    FormularioComponent
   ],
   imports: [
     BrowserModule,

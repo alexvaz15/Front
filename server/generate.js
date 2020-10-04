@@ -6,7 +6,7 @@ for (var i = 1; i <= 100; i++){
     database.products.push({
         id : i,
         name: faker.commerce.productName(),
-        prece: faker.commerce.productName(),  
+        price: faker.commerce.productName(),  
     })
 }
 
