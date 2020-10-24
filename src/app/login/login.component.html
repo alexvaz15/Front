@@ -1,9 +1,17 @@
 <div class="login">
-    <img class="imagen" src="https://www.lostrompos.com.mx/assets/user-default-1534028036fdbd765592addc5403fc97836cbb39353a38fa06a4be250a1ca874.jpg" alt="" class="img-thumbnail">
-    <form class="login-container">
-      <p><input type="email" placeholder="Email"></p>
-      <p><input type="password" placeholder="Password"></p>
-      <p><input type="submit" value="Log in"></p>
-      <p><button (click)="onGoogleL" class="btn btn-lg btn-google">Google</button></p>
-    </form>
-  </div>
+  <img class="imagen"
+    src="https://www.lostrompos.com.mx/assets/user-default-1534028036fdbd765592addc5403fc97836cbb39353a38fa06a4be250a1ca874.jpg"
+    alt="" class="img-thumbnail">
+  <form [formGroup]="LoginForm">
+    <div class="form-group">
+      <p><input type="email" class="form-control" placeholder="Email"></p>
+      <p><input type="password" class="form-control" placeholder="Password"></p>
+      <p><input type="submit" class="btn btn-lg btn-google" value="Log in"></p>
+      
+        <button (click)="onGoogleLogin()" class="btn btn-lg btn-google">Google</button> 
+    </div>
+    
+  </form>
+</div>
+
+<!-- form class="login-container" -->

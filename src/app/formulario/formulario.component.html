@@ -1,10 +1,18 @@
-<div class="login">
-        <form class="login-container">
-            <p><input type="text" placeholder="Direccion"></p>
-            <p><input type="email" placeholder="Agregar Mensaje"></p>
-            <p><input type="file" placeholder="Agregar imagen"></p>
-            <p><input type="email" placeholder="Email"></p>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
-</div>
 
+<div class="login"> 
+    <form [formGroup] = "formuForm">
+        <div class="form-group">
+            <p><input type="autocomplete" class="form-control" placeholder="Direccion"></p>
+            <p><input type="text" class="form-control" placeholder="Agregar Mensaje"></p>
+            <p><input type="file" class="form-control" placeholder="Agregar imagen"></p>
+            <p><input type="email" class="form-control" placeholder="Email"></p> 
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+    </div>
+    
+
+
+
+
+  

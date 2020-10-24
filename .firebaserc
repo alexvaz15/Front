@@ -1,5 +1,14 @@
 {
   "projects": {
     "default": "angular-deploy-bf0b3"
+  },
+  "targets": {
+    "angular-deploy-bf0b3": {
+      "hosting": {
+        "Front": [
+          "angular-deploy-bf0b3"
+        ]
+      }
+    }
   }
 }

@@ -1,7 +1,12 @@
+
 <div class="login"> 
-<p><input type="text" placeholder="Username"></p>
-<p><input type="text" placeholder="Name full"></p>
-<p><input type="email" placeholder="Email"></p>
-<p><input type="password" placeholder="Password"></p>
-<button type="submit" class="btn btn-primary">Aceptar</button>
+<form [formGroup] = "registerForm">
+    <div class="form-group">
+        <p><input type="user" class="form-control" placeholder="Username"></p>
+        <p><input type="name" class="form-control" placeholder="Name full"></p>
+        <p><input type="email" class="form-control" placeholder="Email"></p>
+        <p><input type="password" class="form-control" placeholder="Password"></p>
+        <button type="submit" class="btn btn-primary">Aceptar</button>
+    </div>
+</form>
 </div>
