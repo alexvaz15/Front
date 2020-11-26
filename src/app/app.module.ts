@@ -15,8 +15,8 @@ import { FormularioComponent } from './formulario/formulario.component';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
-import { ReactiveFormsModule } from '@angular/forms';
-import { from } from 'rxjs';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,6 +35,7 @@ import { from } from 'rxjs';
     AngularFireAuthModule,
     AngularFireModule,
     ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
