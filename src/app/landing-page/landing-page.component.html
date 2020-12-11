@@ -1,26 +1,114 @@
- <div class="body" >
-    
+<div class="body">
+
     <div class="tableCenter">
         <table class="table table-dark">
             <thead>
-              <tr >
-    
-                <th scope="col">Id</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Precio</th>
-              </tr>
+                <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Age</th>
+                    <th scope="col">Email</th>
+                    <button class="btn btn-danger"(click)="sendService()">Exit</button>
+                    
+                </tr>
+
             </thead>
 
             <tbody>
-              <tr *ngFor="let product of products">
-                <th scope="row">
-                    {{product.id}}
-                </th>
-                <td>{{product.name}} </td>
-                <td>{{product.price}}</td>
-              </tr>
-             
+                <tr *ngFor="let arreglo of arreglos">
+                    <th scope="row">
+                        {{arreglo.id}}
+                    </th>
+                    <td>{{arreglo.name}}</td>
+                    <td>{{arreglo.age}}</td>
+                    <td>{{arreglo.email}}</td>
+                </tr>
             </tbody>
-          </table>
+
+        </table>
+
+        <div class="tableCenter">
+            <form [formGroup]="landingform1">
+                <!-- Registro -->
+                <button class="btn btn-info" (click)="registro=!registro">Registrar</button><br><br>
+                
+                <div style="text-align: center;" *ngIf="registro" class="form-group">
+                    <p><input class="form-control" id="inputSeleccionado"  type="text" placeholder="Name" formControlName="name"></p>
+                    <p><input class="form-control" id="inputSeleccionado"  type="text" placeholder="Age" formControlName="age"></p>
+                    <p><input class="form-control" id="inputSeleccionado"  type="text" placeholder="Email" formControlName="email"></p>
+                    <div>
+                        <button class="btn btn-info" (click)="agregar()">ADD</button>
+                    </div>
+                </div>
+                <!-- End-->
+                <!-- eliminar -->
+                <button class="btn btn-danger" (click)="registro1=!registro1">Eliminar</button><br><br>
+                <div style="text-align: center;" *ngIf="registro1" class="form-group">
+                    <input class="form-control" id="inputSeleccionado" type="text" placeholder="Ingrese ID: " formControlName="id">
+                  <div><button class="btn btn-danger" (click)="eliminar()">DELETE</button></div>
+                </div>
+                <!-- End-->
+    
+                <button class="btn btn-warning" (click)="registro2=!registro2">Editar</button>
+                <div *ngIf="registro2" class="form-group">
+                        <p><input class="form-control" id="inputSeleccionado" type="text" placeholder="Id" formControlName="id"></p>
+                        <p><input class="form-control" id="inputSeleccionado" type="text" placeholder="Name" formControlName="name"></p>
+                        <p><input class="form-control" id="inputSeleccionado" type="text" placeholder="Age" formControlName="age"></p>
+                        <p><input class="form-control" id="inputSeleccionado" type="text" placeholder="Email" formControlName="email"></p>
+                        <div>
+                            <button class="btn btn-warning" (click)="editar()">EDIT</button>
+                        </div>
+            </div>
+    
+            <br><br>  <div>
+                    <button class="btn btn-primary" (click)="actualizar()">ACTUALIZAR</button>
+                </div>
+    
+            </form>
+        </div>
     </div>
-</div>
+
+
+    <!-- //hola -->
+    
+
+
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">DELETE AND EDIT DATA</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form [formGroup]="landingform1">
+                    <div class="modal-body">
+                        <div class="form-group">
+                            <label for="formGroupExampleInput0" class="text-light bg-dark rounded-pill">Id</label>
+                            <input type="text" class="form-control border border-success" formControlName="id">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput1" class="text-light bg-dark rounded-pill">Name</label>
+                            <input type="text" class="form-control border border-success" formControlName="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput2" class="text-light bg-dark rounded-pill">Age</label>
+                            <input type="text" class="form-control border border-success" formControlName="age">
+                        </div>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput3" class="text-light bg-dark rounded-pill">Email</label>
+                            <input type="text" class="form-control border border-success" formControlName="email">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-lg btn-secondary btn-google"
+                                data-dismiss="modal">CANCEL</button>
+                            <button class="btn btn-lg bg-danger btn-google" (click)="eliminar()">DELETE</button>
+                            <button class="btn btn-lg bg-success btn-google" (click)="editar()">EDIT</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>

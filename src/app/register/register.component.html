@@ -2,11 +2,12 @@
 <div class="login"> 
 <form [formGroup] = "registerForm">
     <div class="form-group">
-        <p><input type="user" class="form-control" placeholder="Username"></p>
-        <p><input type="name" class="form-control" placeholder="Name full"></p>
-        <p><input type="email" class="form-control" placeholder="Email"></p>
-        <p><input type="password" class="form-control" placeholder="Password"></p>
-        <button type="submit" class="btn btn-primary">Aceptar</button>
-    </div>
+        <p><input type="user" class="form-control" placeholder="Username" formControlName="username"></p>
+        <p><input type="lastname" class="form-control" placeholder="Lastname" formControlName="lastname"></p>
+        <p><input type="firstname" class="form-control" placeholder="Name full" formControlName="firstname" ></p>
+        <p><input type="email" class="form-control" placeholder="Email" formControlName="email"></p>
+        <p><input type="password" class="form-control" placeholder="Password" formControlName="password"></p>
+        </div>
+        <button type="submit" class="btn btn-primary" (click)="adduser()">Registrar</button>
 </form>
 </div>

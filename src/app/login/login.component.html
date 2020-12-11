@@ -1,13 +1,14 @@
 <div class="login">
-  <img class="imagen"
-    src="https://www.lostrompos.com.mx/assets/user-default-1534028036fdbd765592addc5403fc97836cbb39353a38fa06a4be250a1ca874.jpg"
-    alt="" class="img-thumbnail">
+  <svg width="24em" height="10em" viewBox="0 0 16 16" class="bi bi-file-person" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+    <path fill-rule="evenodd" d="M12 1H4a1 1 0 0 0-1 1v10.755S4 11 8 11s5 1.755 5 1.755V2a1 1 0 0 0-1-1zM4 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H4z"/>
+    <path fill-rule="evenodd" d="M8 10a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+  </svg>
   <form [formGroup]="LoginFormulario">
     <div class="form-group">
       <p><input type="email" class="form-control" formControlName="email"></p>
       <p><input type="password" class="form-control" formControlName="password"></p>
     </div>
-    <p><input type="submit" class="btn btn-lg btn-google" [disabled]="LoginFormulario.invalid" (click)="logininit()">Login</p>
+    <p><input type="submit" class="btn btn-lg btn-google" [disabled]="LoginFormulario.invalid" (click)="logininit()"></p>
   </form>
   <div class="form-group">
     <button (click)="onGoogleLogin()" class="btn btn-lg btn-google">Google</button>

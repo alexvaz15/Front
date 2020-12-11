@@ -11,9 +11,14 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   LoginFormulario: FormGroup;
-  constructor(public authSer: ServiceService, private Formubuilder: FormBuilder, private authservice: AuthServiceService, private routerr: Router) { }
-
-
+  constructor(public authSer: ServiceService, private Formubuilder: FormBuilder, private authservice: AuthServiceService, private routerr: Router) { 
+    if(authservice.isAutenticated())
+    {
+     this.routerr.navigate(['landing-page'])    
+    }
+  }
+  
+  
   ngOnInit(): void {
     this.LoginFormulario = this.Formubuilder.group({
       email: ['', Validators.required],
