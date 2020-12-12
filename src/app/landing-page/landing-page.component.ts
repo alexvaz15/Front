@@ -21,7 +21,13 @@ export class LandingPageComponent implements OnInit {
   nameButton : String = 'Mostrar';
   info  : String = 'No hay datos';
   
-  constructor(private serviceService : ServiceService,private _authservice: AuthServiceService,private _formbuilder: FormBuilder,  private _router: Router) { }
+  constructor(private serviceService : ServiceService,private _authservice: AuthServiceService,private _formbuilder: FormBuilder,  private _router: Router) { 
+
+    if(!_authservice.isAutenticated())
+    {
+     _router.navigate(['login'])    
+    }
+  }
   arreglos=[];
   landingform: FormGroup;
   landingform1: FormGroup;
@@ -109,7 +115,7 @@ export class LandingPageComponent implements OnInit {
     }
 
     actualizar(): void {
-      this._router.navigate(['/login']);
+      window.location.reload();
     }
 
 
